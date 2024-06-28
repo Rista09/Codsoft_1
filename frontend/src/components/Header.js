@@ -15,6 +15,7 @@ import logo from '../assest/shop250.png'
 
 const Header = () => {
   const user = useSelector(state => state?.user?.user)
+  console.log("User>>>", user);
   const dispatch = useDispatch()
   const [menuDisplay,setMenuDisplay] = useState(false)
   const context = useContext(Context)

@@ -1,7 +1,7 @@
 const displayNPRCurrency = (num) => {
     const formatter = new Intl.NumberFormat('ne-NP', {
         style: "currency",
-        currency: 'NPR',
+        currency: 'NRP',
         currencyDisplay: 'symbol', 
         minimumFractionDigits: 2
     });

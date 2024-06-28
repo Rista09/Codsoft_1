@@ -28,33 +28,38 @@ const Login = () => {
     }
 
 
-    const handleSubmit = async(e) =>{
-        e.preventDefault()
-
-        const dataResponse = await fetch(SummaryApi.signIn.url,{
-            method : SummaryApi.signIn.method,
-            credentials : 'include',
-            headers : {
-                "content-type" : "application/json"
-            },
-            body : JSON.stringify(data)
-        })
-
-        const dataApi = await dataResponse.json()
-
-        if(dataApi.success){
-            toast.success(dataApi.message)
-            navigate('/')
-            fetchUserDetails()
-            fetchUserAddToCart()
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+    
+        try {
+            const dataResponse = await fetch(SummaryApi.signIn.url, {
+                method: SummaryApi.signIn.method,
+                credentials: 'include',
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(data)
+            });
+    
+            const dataApi = await dataResponse.json();
+    
+            if (dataApi.success) {
+                console.log(dataApi);
+                toast.success(dataApi.message);
+                navigate('/'); // Navigate first
+                fetchUserDetails(); // Then fetch user details
+                fetchUserAddToCart(); // And fetch user cart
+            }
+    
+            if (dataApi.error) {
+                toast.error(dataApi.message);
+            }
+        } catch (error) {
+            console.error('Login Error:', error);
+            toast.error('An error occurred during login. Please try again.');
         }
-
-        if(dataApi.error){
-            toast.error(dataApi.message)
-        }
-
-    }
-
+    };
+    
     console.log("data login",data)
     
   return (

@@ -10,13 +10,16 @@ const router = require('./routes');
 const app = express();
 
 // Middleware
-app.use(cors({
-    origin: "http://localhost:3000",
+const corsOptions = {
+    origin: ["http://localhost:3000", "https://shop.codebyte.tech"],
     credentials: true,
     optionnSuccessStatus: 200,
     allowedHeaders: 'Content-Type, Authorization',
     methods: 'GET, POST, PUT, DELETE, OPTIONS'
-}));
+};
+
+app.use(cors(corsOptions));
+
 app.use(express.json());
 app.use(cookieParser());
 app.use(bodyParser.json({ limit: '10mb' })); // Increase payload limit for JSON

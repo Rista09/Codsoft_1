@@ -18,7 +18,7 @@ const Home = () => {
         speakers: false,
         refrigerator: true,
         trimmers: true,
-        laptops: true, // Added laptops with true value for demonstration
+        laptops: true, 
     };
 
     const [productData, setProductData] = useState({});
@@ -64,7 +64,7 @@ const Home = () => {
                     return (
                         <React.Fragment key={category}>
                             {productData[category]?.length > 0 && (
-                                <VerticalCardProduct category={category} heading={category} />
+                                <VerticalCardProduct category={category} heading={category.charAt(0).toUpperCase() + category.slice(1)} />
                             )}
                         </React.Fragment>
                     );
