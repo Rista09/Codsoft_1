@@ -1,5 +1,5 @@
-// const backendDomin = "http://localhost:8080"
-const backendDomin = "https://shop.serverftp.tech"
+const backendDomin = "http://localhost:8080"
+// const backendDomin = "https://shop.serverftp.tech"
 
 
 const SummaryApi = {
@@ -78,6 +78,22 @@ const SummaryApi = {
     filterProduct : {
         url : `${backendDomin}/api/filter-product`,
         method : 'post'
+    },
+    orderProduct: {
+        url : `${backendDomin}/api/order`,
+        method : 'get'
+    },
+    manageOrder: {
+        url : `${backendDomin}/api/manageOrder`,
+        method : 'get'
+    },
+    getAllOrder: {
+        url : `${backendDomin}/api/get-orders`,
+        method : 'get'
+    },
+    getMyOrder: {
+        url : `${backendDomin}/api/get-order`,
+        method : 'get'
     }
 }
 

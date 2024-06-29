@@ -3,7 +3,7 @@ const productCategory = [
     { id : 2, label : "Camera", value : "camera"},
     { id : 3, label : "Earphones", value : "earphones"},
     { id : 4, label : "Mobiles", value : "mobiles"},
-    { id : 5, label : "Mouse", value : "Mouse"},
+    { id : 5, label : "Mouse", value : "mouse"},
     { id : 6, label : "Printers", value : "printers"},
     { id : 7, label : "Processor", value : "processor"},
     { id : 8, label : "Refrigerator", value : "refrigerator"},
@@ -12,6 +12,8 @@ const productCategory = [
     { id : 11, label : "Televisions", value : "televisions"},
     { id : 12, label : "Watches", value : "watches"},
     { id : 13, label : "Laptops", value : "laptops"},
+    { id : 14, label : "Accessories", value : "accessories"},
+
 
 ]
 

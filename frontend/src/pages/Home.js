@@ -11,14 +11,16 @@ const Home = () => {
         airpodes: true,
         watches: true,
         mobiles: true,
-        Mouse: false,
+        mouse: true,
         televisions: true,
-        camera: false,
+        camera: true,
         earphones: true,
-        speakers: false,
+        speakers: true,
         refrigerator: true,
         trimmers: true,
         laptops: true, 
+        printers: true,
+        accessories: true
     };
 
     const [productData, setProductData] = useState({});
@@ -62,6 +64,7 @@ const Home = () => {
             {Object.keys(productAvailability).map(category => {
                 if (productAvailability[category]) {
                     return (
+                        
                         <React.Fragment key={category}>
                             {productData[category]?.length > 0 && (
                                 <VerticalCardProduct category={category} heading={category.charAt(0).toUpperCase() + category.slice(1)} />

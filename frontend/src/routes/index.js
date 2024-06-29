@@ -11,6 +11,9 @@ import CategoryProduct from '../pages/CategoryProduct';
 import ProductDetails from '../pages/ProductDetails';
 import Cart from '../pages/Cart';
 import SearchProduct from '../pages/SearchProduct';
+import OrderBill from '../pages/OrderBill';
+import Order from '../pages/Order';
+import AllOrder from '../pages/All-orders';
 
 const router = createHashRouter([
     {
@@ -50,6 +53,14 @@ const router = createHashRouter([
                 element: <SearchProduct/>
             },
             {
+                path: 'bill',
+                element: <OrderBill/>
+            },
+            {
+                path: 'orders',
+                element: <Order/>
+            },
+            {
                 path: 'admin-panel',
                 element: <AdminPanel/>,
                 children: [
@@ -60,7 +71,11 @@ const router = createHashRouter([
                     {
                         path: 'all-products',
                         element: <AllProducts/>
-                    }
+                    },
+                    {
+                        path: 'all-orders',
+                        element: <AllOrder/>
+                    },
                 ]
             },
         ]

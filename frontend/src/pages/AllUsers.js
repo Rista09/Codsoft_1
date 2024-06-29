@@ -40,7 +40,7 @@ const AllUsers = () => {
   }, []);
 
   return (
-    <div className="bg-white pb-4">
+    <div className="bg-white">
       <div className="overflow-x-auto shadow-md sm:rounded-lg mt-5 rounded-md">
         <table className="w-full table-auto text-sm text-left text-gray-500 dark:text-gray-400">
           <thead className="text-xs uppercase bg-gray-700 text-white dark:bg-gray-700 dark:text-gray-400">

@@ -22,6 +22,7 @@ async function authToken(req,res,next){
             }
 
             req.userId = decoded?._id
+            console.log(req.userId);
 
             next()
         });

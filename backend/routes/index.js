@@ -22,6 +22,10 @@ const updateAddToCartProduct = require('../controller/user/updateAddToCartProduc
 const deleteAddToCartProduct = require('../controller/user/deleteAddToCartProduct')
 const searchProduct = require('../controller/product/searchProduct')
 const filterProductController = require('../controller/product/filterProduct')
+const createOrderProduct = require('../controller/order/orderProduct')
+const { handleKhaltiCallback } = require('../controller/order/manageOrder')
+const { getAllOrder } = require('../controller/order/getAllOrders')
+const { getMyOrders } = require('../controller/order/getMyOrder')
 
 
 
@@ -53,8 +57,11 @@ router.post("/delete-cart-product",authToken,deleteAddToCartProduct)
 
 
 
-
-
+//Order
+router.get("/order", authToken, createOrderProduct)
+router.get("/manageOrder", authToken, handleKhaltiCallback)
+router.get("/get-orders", authToken, getAllOrder)
+router.get('/get-order', authToken, getMyOrders)
 
 
 module.exports = router
